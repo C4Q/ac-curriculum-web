@@ -10,7 +10,6 @@ var f = function () {
     test = "new value"
 
     if (test) {
-        var test;
         test += " and more!"
     } else {
         var test = "It begins here"
@@ -37,10 +36,25 @@ var f = function () {
 f()
 console.log("Test: " + test)
 ```
-
-
 #### 3
 
+```js
+var test = "initial value"
+var f = function () {
+    test += "new value"
+
+    if (test) {
+        test += " and more!"
+    } else {
+        var test = "It begins here"
+    }
+    return test
+}
+console.log(f())
+```
+
+#### 4
+```js
 var test = "initial value"
 for (var i = 0; i < 5; i++) {
     test = "new value"
@@ -54,7 +68,66 @@ for (var i = 0; i < 5; i++) {
 }
 
 console.log("Test: " + test)
+```
 
 
-#### 4
+#### 5
+```js
+var test = "initial value"
+var f = function () {
+    test = "new value"
+
+    if (test) {
+        test += " and more!"
+    } else {
+        test = "It begins here"
+    }
+    g()
+}
+var g=function(){
+	var test="newnew value"
+}
+f()
+console.log("Test: " + test)
+```
+
+#### 6
+```js
+var test = "initial value"
+var f = function () {
+    test = "new value"
+
+    if (test) {
+        test += " and more!"
+    } else {
+        var test = "It begins here"
+    }
+    g()
+}
+var g=function(){
+	test="newnew value"
+}
+f()
+console.log("Test: " + test)
+```
+
+#### 7
+```js
+var test = "initial value"
+var f = function () {
+	g()
+    test = "new value"
+
+    if (test) {
+        test += " and more!"
+    } else {
+        test = "It begins here"
+    }
+}
+var g=function(){
+	test="newnew value"
+}
+f()
+console.log("Test: " + test)
+```
 
